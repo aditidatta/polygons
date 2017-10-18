@@ -4,8 +4,8 @@
     <title>{{ Page.title() }} - Polygons.me</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
-    <script src="/scripts/angular-ui-router.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
     <script src="/javascripts/main.controller.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -17,10 +17,10 @@
     <h1>{{ Page.title() }}</h1>
     <nav class="navbar">
         <ul class="nav nav-pills nav-justified">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Algorithms</a></li>
-            <li><a href="#">Research</a></li>
-            <li><a href="#">Projects</a></li>
+            <li><a ui-sref="home" ui-sref-active="active">Home</a></li>
+            <li><a ui-sref="algo" ui-sref-active="active">Algorithms</a></li>
+            <li><a ui-sref="research" ui-sref-active="active">Research</a></li>
+            <li><a ui-sref="projects" ui-sref-active="active">Projects</a></li>
         </ul>
     </nav>
     <div>
