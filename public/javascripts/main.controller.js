@@ -1,12 +1,12 @@
-var app = angular.module('polygons', ['ui.router']);
-
+var app = angular.module('polygons', []);
+/*
 app.controller('MainCtrl', [
     '$scope',
     function($scope) {
         $scope.test = 'Welcome to Polygons.me!';
     }
 ]);
-
+*/
 myApp.config(function($stateProvider) {
     var home = {
         name: 'home',
