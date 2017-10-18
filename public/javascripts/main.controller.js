@@ -1,4 +1,44 @@
-var app = angular.module('polygons', ['ui.router']);
+var app = angular.module('polygons', []);
+
+
+app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+    $routeProvider.
+    when('/home', { template: 'Home', controller: HomeCtrl }).
+    when('/algo', { template: 'Algorithms', controller: AlgoCtrl }).
+    when('/research', { template: 'My Dissertation Paper', controller: ResearchCtrl }).
+    when('/projects', { template: 'Projects', controller: ProjCtrl }).
+    otherwise({ redirectTo: 'home' });
+    $locationProvider.html5Mode(true);
+}]);
+
+app.factory('Page', function() {
+    var title = 'default';
+    return {
+        title: function() { return title; },
+        setTitle: function(newTitle) { title = newTitle; }
+    };
+});
+
+function MainCtrl($scope, Page) {
+    $scope.Page = Page;
+}
+
+function HomeCtrl($scope, Page) {
+    Page.setTitle('Home');
+}
+
+function AlgoCtrl($scope, Page) {
+    Page.setTitle('Algorithms');
+}
+
+function ResearchCtrl($scope, Page) {
+    Page.setTitle('Research');
+}
+
+function ProjCtrl($scope, Page) {
+    Page.setTitle('Projects');
+}
+
 /*
 app.controller('MainCtrl', [
     '$scope',
@@ -6,7 +46,7 @@ app.controller('MainCtrl', [
         $scope.test = 'Welcome to Polygons.me!';
     }
 ]);
-*/
+
 app.config(function($stateProvider) {
     var home = {
         name: 'home',
@@ -37,3 +77,4 @@ app.config(function($stateProvider) {
     $stateProvider.state(research);
     $stateProvider.state(projects);
 });
+*/
