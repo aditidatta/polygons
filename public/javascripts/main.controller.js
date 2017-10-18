@@ -1,4 +1,4 @@
-var app = angular.module('polygons', []);
+var app = angular.module('polygons', ['ui.router']);
 /*
 app.controller('MainCtrl', [
     '$scope',
