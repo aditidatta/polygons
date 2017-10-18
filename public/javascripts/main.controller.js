@@ -7,7 +7,7 @@ app.controller('MainCtrl', [
     }
 ]);
 */
-myApp.config(function($stateProvider) {
+app.config(function($stateProvider) {
     var home = {
         name: 'home',
         url: '/home',
